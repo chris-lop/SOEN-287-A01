@@ -93,3 +93,11 @@ body {
 .projects ol {
     text-align: justify;
 }
+
+.contact-me input {
+    text-align: left;
+}
+
+.contact-me textarea {
+    text-align: left;
+}
