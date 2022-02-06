@@ -32,3 +32,23 @@ li a:hover {
 .active {
     background-color: #04AA6D;
   }
+
+.self-portrait {
+    display: flex;
+    justify-content: center;
+    padding: 75px;
+}
+
+.professional-statement {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.summary {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: justify;
+}
