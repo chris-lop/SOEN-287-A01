@@ -1,7 +1,8 @@
 body { 
-    margin: 0; 
+    margin: 0;
+    padding-top: 60px;
 }
-ul {
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -12,12 +13,12 @@ ul {
     width: 100%;
   }
 
-li {
+.navbar li {
     float: left;
     border-right: 1px solid #bbb;
 }
 
-li a {
+.navbar li a {
     display: block;
     color: white;
     text-align: center;
@@ -25,18 +26,17 @@ li a {
     text-decoration: none;
 }
 
-li a:hover {
+.navbar li a:hover {
     background-color: #111;
 }
 
-.active {
+.navbar .active {
     background-color: #04AA6D;
   }
 
 .self-portrait {
     display: flex;
     justify-content: center;
-    padding: 75px;
 }
 
 .professional-statement {
@@ -47,8 +47,45 @@ li a:hover {
 }
 
 .summary {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
     text-align: justify;
+}
+
+.education dl {
+    text-align: left;
+}
+
+.education ul {
+    margin-top: auto;
+}
+
+.skills dl {
+    text-align: left;
+}
+
+.awards ol {
+    text-align: left;
+}
+
+.experience ol {
+    text-align: left;
+}
+
+.references ul {
+    text-align: left;
+}
+
+.download-cv button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #04AA6D;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 30px;
 }
