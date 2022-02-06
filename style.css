@@ -106,3 +106,19 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.login-input {
+    text-align: justify;
+}
+
+.login-button {
+ text-align: center;
+}
+
+.login-button input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    cursor: pointer;
+}
