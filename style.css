@@ -101,3 +101,8 @@ body {
 .contact-me textarea {
     text-align: left;
 }
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+}
