@@ -15,6 +15,12 @@
                 <li><a class="active" href="adminLogout.html">Logout</a></li>
             </ul>
         </div>
+        <input type="submit" value="Logout" onClick="processLogout()">
     </body>
+    <script>
+        function processLogout() {
+            sessionStorage.clear(); 
+        }
+    </script>
 </html>
     

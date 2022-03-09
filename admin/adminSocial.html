@@ -15,6 +15,38 @@
                 <li><a href="adminLogout.html">Logout</a></li>
             </ul>
         </div>
+        <form>
+            <label for="social1">Social Link 1</label><br>
+            <input id="social1"></input><br>
+            <label for="social2">Social Link 2</label><br>
+            <input id="social2"></input><br>
+            <label for="social3">Social Link 3</label><br>
+            <input id="social3"></input><br><br>
+            <input type="submit" value="Submit" onClick="submitSocial()">
+        </form>
+        <script>
+            function submitSocial() {
+                const social1 = document.getElementById('social1');
+                const social2 = document.getElementById('social2');
+                const social3 = document.getElementById('social3');
+
+                let data =
+                    'Social Link 1: ' + social1.value + '\r\n'+
+                    'Social Link 2: ' + social2.value + '\r\n'+
+                    'Social Link 3: ' + social3.value;
+                
+                const blob = new Blob([data], { type: 'text/plain' });
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.download = "socialData.txt";
+                a.href = window.URL.createObjectURL(blob);
+                a.target = "blank";
+                a.style.display = "none"
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+        </script>
     </body>
 </html>
     

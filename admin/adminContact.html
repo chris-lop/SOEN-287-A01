@@ -15,34 +15,38 @@
                 <li><a href="adminLogout.html">Logout</a></li>
             </ul>
         </div>
-        <label for="messageFile">ReadMessage</label><br>
-        <input id="messageFile" type="file"><br><br>
-        <script>
-            const messageFile = document.getElementById("messageFile");
-
-            messageFile.addEventListener("change", function readMessages() {
-                const reader = new FileReader()
-                reader.onload = function () {
-                    // To Remove
-                    console.log(reader.result)
-
-                    const lines = reader.result.split('\n').map(function (line) {
-                        return line.split(',')
-                    })
-                    // To Remove
-                    console.log(lines)
-                    
-                    var a = document.createElement("table");
-                    
-                    // For loop adding row and data element to table
-                    for (i = 0 ; i < lines.length ; i++) {
-                        
-                    }
-                    
-                    document.body.appendChild(a);
-                }
-                reader.readAsText(messageFile.files[0])
-            });
+        <table>
+            <tr>
+                <td>&nbsp;</td>
+                <td><b>Message Window</b></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <textarea id="displayWin" cols="100" rows="25"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">Select a File to Upload:</td>
+                <td><input type="file" id="uploadFile"></td>
+                <td>&nbsp;<td>
+            </tr>
+            <tr>
+                <td style="text-align:right;">ReadMessage:</td>
+                <td><button onclick="readMessages()">Click to Upload</button></td>
+                <td>&nbsp;<td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            function readMessages() {
+                var uploadFile = document.getElementById("uploadFile").files[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function(fileLoadedEvent) {
+                    var elemHdl = document.getElementById("displayWin");
+                    elemHdl.value = fileLoadedEvent.target.result;
+                };
+                fileReader.readAsText(uploadFile, "UTF-8");
+            };
         </script>
     </body>
 </html>
