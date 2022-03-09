@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume Page</title>
+        <link rel="stylesheet" href="adminStyle.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="adminIndex.html">Home</a></li>
+                <li><a class="active" href="adminResume.html">Resume</a></li>
+                <li><a href="adminProjects.html">Projects</a></li>
+                <li><a href="adminContact.html">Contact</a></li>
+                <li><a href="adminSocial.html">Social</a></li>
+                <li><a href="adminLogout.html">Logout</a></li>
+            </ul>
+        </div>
+        <form>
+            <label for="eduQual">Educational Qualifications</label><br>
+            <textarea id="eduQual"></textarea><br>
+            <label for="skills">Skill Set</label><br>
+            <textarea id="skills"></textarea><br>
+            <label for="awards">Awards/Recognition</label><br>
+            <textarea id="awards"></textarea><br>
+            <label for="experience">Work Experience</label><br>
+            <textarea id="experience"></textarea><br>
+            <label for="referees">Referees</label><br>
+            <textarea id="referees"></textarea><br>
+            <input type="submit" value="Submit" onClick="submitResume()">
+        </form>
+        <script>
+            function submitResume() {
+                const eduQual = document.getElementById('eduQual');
+                const skills = document.getElementById('skills');
+                const awards = document.getElementById('awards');
+                const experience = document.getElementById('experience');
+                const referees = document.getElementById('referees');
+
+                let data =
+                    'Educational Qualifications: ' + eduQual.value + '\r\n'+
+                    'Skill Set: ' + skills.value + '\r\n'+
+                    'Awards/Recognition: ' + awards.value + '\r\n'+
+                    'Work Experience: ' + experience.value + '\r\n'+
+                    'Referees: ' + referees.value;
+
+                const blob = new Blob([data], { type: 'text/plain' });
+                var url = window.URL.createObjectURL(blob);
+                var a = document.createElement("a");
+                a.download = "resumeData.txt";
+                a.href = window.URL.createObjectURL(blob);
+                a.target = "blank";
+                a.style.display = "none"
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+        </script>
+    </body>
+</html>
+    

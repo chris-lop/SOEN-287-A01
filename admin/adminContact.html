@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Page</title>
+        <link rel="stylesheet" href="adminStyle.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="adminIndex.html">Home</a></li>
+                <li><a href="adminResume.html">Resume</a></li>
+                <li><a href="adminProjects.html">Projects</a></li>
+                <li><a class="active" href="adminContact.html">Contact</a></li>
+                <li><a href="adminSocial.html">Social</a></li>
+                <li><a href="adminLogout.html">Logout</a></li>
+            </ul>
+        </div>
+        <label for="messageFile">ReadMessage</label><br>
+        <input id="messageFile" type="file"><br><br>
+        <script>
+            const messageFile = document.getElementById("messageFile");
+
+            messageFile.addEventListener("change", function readMessages() {
+                const reader = new FileReader()
+                reader.onload = function () {
+                    // To Remove
+                    console.log(reader.result)
+
+                    const lines = reader.result.split('\n').map(function (line) {
+                        return line.split(',')
+                    })
+                    // To Remove
+                    console.log(lines)
+                    
+                    var a = document.createElement("table");
+                    
+                    // For loop adding row and data element to table
+                    for (i = 0 ; i < lines.length ; i++) {
+                        
+                    }
+                    
+                    document.body.appendChild(a);
+                }
+                reader.readAsText(messageFile.files[0])
+            });
+        </script>
+    </body>
+</html>
+    
