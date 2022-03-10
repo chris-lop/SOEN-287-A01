@@ -3,6 +3,7 @@
     <head>
         <title>Resume Page</title>
         <link rel="stylesheet" href="adminStyle.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -28,33 +29,6 @@
             <textarea id="referees"></textarea><br>
             <input type="submit" value="Submit" onClick="submitResume()">
         </form>
-        <script>
-            function submitResume() {
-                const eduQual = document.getElementById('eduQual');
-                const skills = document.getElementById('skills');
-                const awards = document.getElementById('awards');
-                const experience = document.getElementById('experience');
-                const referees = document.getElementById('referees');
-
-                let data =
-                    'Educational Qualifications: ' + eduQual.value + '\r\n'+
-                    'Skill Set: ' + skills.value + '\r\n'+
-                    'Awards/Recognition: ' + awards.value + '\r\n'+
-                    'Work Experience: ' + experience.value + '\r\n'+
-                    'Referees: ' + referees.value;
-
-                const blob = new Blob([data], { type: 'text/plain' });
-                var url = window.URL.createObjectURL(blob);
-                var a = document.createElement("a");
-                a.download = "resumeData.txt";
-                a.href = window.URL.createObjectURL(blob);
-                a.target = "blank";
-                a.style.display = "none"
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            }
-        </script>
     </body>
 </html>
     

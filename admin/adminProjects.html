@@ -3,6 +3,7 @@
     <head>
         <title>Projects Page</title>
         <link rel="stylesheet" href="adminStyle.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <div class="navbar">
@@ -20,24 +21,6 @@
             <textarea id="projects"></textarea><br>
             <input type="submit" value="Submit" onClick="submitProjects()">
         </form>
-        <script>
-            function submitProjects() {
-                const projects = document.getElementById('projects');
-
-                data = 'My Projects: ' + projects.value;
-                
-                const blob = new Blob([data], { type: 'text/plain' });
-                var url = window.URL.createObjectURL(blob);
-                var a = document.createElement("a");
-                a.download = "projectsData.txt";
-                a.href = window.URL.createObjectURL(blob);
-                a.target = "blank";
-                a.style.display = "none"
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            }
-        </script>
     </body>
 </html>
     

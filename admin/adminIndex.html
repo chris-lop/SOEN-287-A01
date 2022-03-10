@@ -3,6 +3,7 @@
     <head>
         <title>Home Page</title>
         <link rel="stylesheet" href="adminStyle.css">
+        <script src="script.js"></script>
     </head>
     
     <body>
@@ -23,28 +24,5 @@
             <textarea id="bio"></textarea><br>
             <input type="submit" value="Submit" onClick="submitIndex()">
         </form>
-        <script>
-            function submitIndex() {
-                const profStatement = document.getElementById('profStatement');
-                const bio = document.getElementById('bio');
-
-                let data =
-                    'Professional Statement: ' + profStatement.value + '\r\n'+
-                    'Brief Biography: ' + bio.value;
-                
-                const blob = new Blob([data], { type: 'text/plain' });
-                var url = window.URL.createObjectURL(blob);
-                var a = document.createElement("a");
-                a.download = "indexData.txt";
-                a.href = window.URL.createObjectURL(blob);
-                a.target = "blank";
-                a.style.display = "none"
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-
-                // document.querySelector('form').reset();
-            }
-        </script>
     </body>
 </html>
